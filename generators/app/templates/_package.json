@@ -1,0 +1,8 @@
+{
+	"name": "<%= name %>",
+	"version": "0.1.0",
+	"dependencies": {
+		"grunt": "~0.4.5",
+		"grunt-contrib-concat": "~0.5.1"
+	}
+}
