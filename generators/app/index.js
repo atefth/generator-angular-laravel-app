@@ -5,6 +5,7 @@ var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
   init: function () {
+    this.destinationRoot(this.destinationRoot()+'/'+this.appName);
   },
   prompting: function () {
     var done = this.async();
