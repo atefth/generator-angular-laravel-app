@@ -1,4 +1,4 @@
-# generator-custom-app [![Build Status](https://secure.travis-ci.org/atefth@gmail.com/generator-custom-app.png?branch=master)](https://travis-ci.org/atefth@gmail.com/generator-custom-app)
+# generator-angular-laravel-app [![Build Status](https://secure.travis-ci.org/atefth@gmail.com/generator-angular-laravel-app.png?branch=master)](https://travis-ci.org/atefth@gmail.com/generator-angular-laravel-app)
 
 > [Yeoman](http://yeoman.io) generator
 
@@ -23,16 +23,16 @@ npm install -g yo
 
 Yeoman travels light. He didn't pack any generators when he moved in. You can think of a generator like a plug-in. You get to choose what type of application you wish to create, such as a Backbone application or even a Chrome extension.
 
-To install generator-custom-app from npm, run:
+To install generator-angular-laravel-app from npm, run:
 
 ```bash
-npm install -g generator-custom-app
+npm install -g generator-angular-laravel-app
 ```
 
 Finally, initiate the generator:
 
 ```bash
-yo custom-app
+yo angular-laravel-app
 ```
 
 ### Getting To Know Yeoman
