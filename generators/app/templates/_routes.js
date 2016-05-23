@@ -10,7 +10,7 @@ angular.module('<%= name %>')
 	$stateProvider
 	.state('home', {
 		url: '/',
-		templateUrl: 'views/commons/home.html'
+		templateUrl: 'client/views/commons/home.html'
 	});
 
 }])

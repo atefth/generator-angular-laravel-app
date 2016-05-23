@@ -1,10 +1,10 @@
 {
-  "name": "generator-custom-app",
-  "version": "0.0.0",
+  "name": "generator-angular-laravel-app",
+  "version": "0.0.1",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "atefth@gmail.com/generator-custom-app",
+  "repository": "https://github.com/atefth/generator-angular-laravel-app.git",
   "author": {
     "name": "",
     "email": "",
@@ -14,7 +14,7 @@
     "test": "mocha"
   },
   "files": [
-    "generators"
+    "generators/app"
   ],
   "keywords": [
     "yeoman-generator"
