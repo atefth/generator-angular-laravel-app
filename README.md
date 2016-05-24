@@ -1,4 +1,4 @@
-# generator-angular-laravel-app [![Build Status](https://secure.travis-ci.org/atefth@gmail.com/generator-angular-laravel-app.png?branch=master)](https://travis-ci.org/atefth@gmail.com/generator-angular-laravel-app)
+# generator-angular-laravel-app [![Build Status](https://secure.travis-ci.org/atefth/generator-angular-laravel-app.png?branch=master)](https://travis-ci.org/atefth@gmail.com/generator-angular-laravel-app)
 
 > [Yeoman](http://yeoman.io) generator
 
