@@ -5,12 +5,13 @@ var yosay = require('yosay');
 
 module.exports = yeoman.generators.Base.extend({
   init: function () {
+    this.destinationRoot(this.destinationRoot()+'/'+this.appName);
   },
   prompting: function () {
     var done = this.async();
 
     // Have Yeoman greet the user.
-    this.log(yosay('Welcome to the premium ' + chalk.red('CustomApp') + ' generator!'));
+    this.log(yosay('Welcome to the premium ' + chalk.red('Angular + Laravel') + ' app generator!'));
 
     var prompts = [
       {
@@ -31,33 +32,38 @@ module.exports = yeoman.generators.Base.extend({
       this.props = props;
       // To access props later use this.props.someOption;
       this.appName = this.props.name;
-      this.destinationRoot(this.destinationRoot()+'/client');
+      this.destinationRoot(this.destinationRoot()+'/'+this.appName);
       this.appDescription = this.props.description;
       this.config.set('appName', this.appName);
+      this.config.save();
 
       done();
     }.bind(this));
   },
   configuring: {
     laravel: function () {
-      var done = this.async();
       this.log(yosay('Please wait while ' + chalk.red('Laravel') + ' is being installed!'));
       this.destinationRoot(this.destinationRoot()+'/../');
+      var done = this.async();
       var composer = this.spawnCommand('composer', ['create-project', '--prefer-dist', 'laravel/laravel', this.appName]);
       composer.on('close', function (argument) {
-        done();
+        this.emit('removeWelcomeFile');
+      }.bind(this));
+      this.on('removeWelcomeFile', function(){
+        this.log(yosay('Removing default welcome.blade.php file..'));
+        var rm = this.spawnCommand('rm', ['-rf', this.appName + '/resources/views/welcome.blade.php']);
+        rm.on('close', function (argument) {
+          done();
+        });
       });
-    },
-    welcome_file: function () {
-      var done = this.async();
-      var rm = this.spawnCommand('rm', ['-rf', this.appName + '/resources/views/welcome.blade.php']);
-      rm.on('close', function (argument) {
-        done();
-      });
-      this.destinationRoot(this.destinationRoot()+'/client');
     }
   },
   writing: {
+    init: function () {
+      this.log(yosay('Generating angular app files..'));
+      this.destinationRoot(this.destinationRoot()+'/../client');
+      this.log(this.destinationRoot());
+    },
     app: function () {
       this.fs.copyTpl(
         this.templatePath('_package.json'),
@@ -90,15 +96,6 @@ module.exports = yeoman.generators.Base.extend({
         this.destinationPath('../'+this.appName+'/resources/views/welcome.blade.php'),
         { name: this.appName }
         );
-      // this.fs.copyTpl(
-      //   this.templatePath('_header.html'),
-      //   this.destinationPath('views/commons/header.html'),
-      //   { name: this.appName }
-      //   );
-      // this.fs.copy(
-      //   this.templatePath('_footer.html'),
-      //   this.destinationPath('views/commons/footer.html')
-      //   );
       this.fs.copy(
         this.templatePath('_home.html'),
         this.destinationPath('views/commons/home.html')
@@ -126,7 +123,6 @@ module.exports = yeoman.generators.Base.extend({
         { name: this.appName }
         );
     },
-
     projectfiles: function () {
       this.fs.copy(
         this.templatePath('editorconfig'),
@@ -145,13 +141,12 @@ module.exports = yeoman.generators.Base.extend({
 
   end: {
     move: function () {
-      var done = this.async();
       this.log(yosay('Moving files into their directories!'));
       this.destinationRoot('../');
+      var done = this.async();
       var mv = this.spawnCommand('mv', ['client', this.appName + '/public']);
       mv.on('close', function (argument) {
-        // this.destinationRoot(this.destinationRoot()+'../client');
-        done();
+        this.emit('cleanUp');
       });
     }
   }
