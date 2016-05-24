@@ -6,7 +6,7 @@ var helpers = require('yeoman-generator').test;
 var os = require('os');
 
 describe('angular-laravel-app:app', function () {
-  this.timeout(12000);
+  this.timeout(720000);
   before(function (done) {
     helpers.run(path.join(__dirname, '../generators/app'))
       .withOptions({ skipInstall: true })
