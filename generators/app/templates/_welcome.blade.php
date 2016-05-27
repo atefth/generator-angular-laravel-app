@@ -20,6 +20,7 @@
 	<script src="client/app/routes.js" type="text/javascript" charset="utf-8"></script>
 	<script src="client/app/controllers.js" type="text/javascript" charset="utf-8"></script>
 	<script src="client/app/factories.js" type="text/javascript" charset="utf-8"></script>
+	<script src="client/app/services.js" type="text/javascript" charset="utf-8"></script>
 
 	<!-- yeoman controllers go here  -->
 	<generated-controllers>
