@@ -12,33 +12,33 @@ module.exports = yeoman.generators.Base.extend({
     var done = this.async();
     var prompts = [{
       type: 'input',
-      name: 'controller',
-      message: 'What should we call the controller?',
+      name: 'factory',
+      message: 'What should we call the factory?',
       default: 'default'
     }];
 
     this.prompt(prompts, function (props) {
       this.props = props;
       // To access props later use this.props.someOption;
-      this.controllerName = this.props.controller;
-      this.controllerDir = this.destinationRoot()+'/public/client/app/controllers';
-      this.log(yosay(chalk.red(this.controllerName)));
+      this.factoryName = this.props.factory;
+      this.factoryDir = this.destinationRoot()+'/public/client/app/factories';
+      this.log(yosay(chalk.red(this.factoryName)));
 
       done();
     }.bind(this));
   },
   writing: {
-    controller: function () {
-      this.destinationRoot(this.controllerDir);
+    factory: function () {
+      this.destinationRoot(this.factoryDir);
       this.fs.copyTpl(
-        this.templatePath('_Controller.js'),
-        this.destinationPath(this.controllerName+'Ctrl.js'),
-        { name: this.appName, controller: this.controllerName }
+        this.templatePath('_factory.js'),
+        this.destinationPath(this.factoryName+'.js'),
+        { name: this.appName, factory: this.factoryName }
         );
-      var hook = 'generated-controllers';
+      var hook = 'generated-factories';
       this.destinationRoot(this.destinationRoot()+'/../../../../');
       var path = this.destinationPath('/resources/views/welcome.blade.php');
-      var insert = '\n<script src="client/app/controllers/'+this.controllerName+'Ctrl.js" type="text/javascript" charset="utf-8"></script>\n';
+      var insert = '\n<script src="client/app/factories/'+this.factoryName+'.js" type="text/javascript" charset="utf-8"></script>\n';
       wiring.appendToFile(path, hook, insert);
     }
   },

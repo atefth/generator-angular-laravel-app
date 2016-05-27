@@ -1,6 +1,6 @@
 /**
 * <%= name %> Controllers Module
 *
-* Controllers for app
+* Controllers for <%= name %> app
 */
 var controllers = angular.module('<%= name %>.controllers', []);
