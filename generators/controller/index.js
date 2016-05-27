@@ -27,7 +27,6 @@ module.exports = yeoman.generators.Base.extend({
       done();
     }.bind(this));
   },
-
   writing: {
     controller: function () {
       this.destinationRoot(this.controllerDir);
