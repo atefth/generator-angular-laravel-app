@@ -1,4 +1,4 @@
-# generator-angular-laravel-app [![Build Status](https://secure.travis-ci.org/atefth/generator-angular-laravel-app.png?branch=master)](https://travis-ci.org/atefth@gmail.com/generator-angular-laravel-app)
+# generator-angular-laravel-app [![Build Status](https://secure.travis-ci.org/atefth/generator-angular-laravel-app.png?branch=master)](https://travis-ci.org/atefth/generator-angular-laravel-app)
 
 > [Yeoman](http://yeoman.io) generator
 
@@ -29,13 +29,41 @@ To install generator-angular-laravel-app from npm, run:
 npm install -g generator-angular-laravel-app
 ```
 
-Finally, initiate the generator:
+## Angular Laravel App Generator
+
+### Initiate the generator:
 
 ```bash
 yo angular-laravel-app
 ```
 
-### Getting To Know Yeoman
+## Angular Laravel App Sub Generators
+
+### Generate an angular controller:
+
+```bash
+yo angular-laravel-app:controller
+```
+
+### Generate an angular factory:
+
+```bash
+yo angular-laravel-app:factory
+```
+
+### Generate an angular service:
+
+```bash
+yo angular-laravel-app:service
+```
+
+### Generate an angular directive:
+
+```bash
+yo angular-laravel-app:directive
+```
+
+## Getting To Know Yeoman
 
 Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
 

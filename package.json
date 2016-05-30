@@ -1,6 +1,6 @@
 {
   "name": "generator-angular-laravel-app",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Custom App Generator for Laravel5 and AngularJs",
   "license": "MIT",
   "main": "app/index.js",

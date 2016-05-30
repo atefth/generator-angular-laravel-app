@@ -128,6 +128,11 @@ module.exports = yeoman.generators.Base.extend({
         { name: this.appName }
         );
       this.fs.copyTpl(
+        this.templatePath('_directives.js'),
+        this.destinationPath('app/directives.js'),
+        { name: this.appName }
+        );
+      this.fs.copyTpl(
         this.templatePath('_controller.js'),
         this.destinationPath('app/controllers/homeCtrl.js'),
         { name: this.appName }
