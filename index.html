@@ -3,30 +3,48 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
 
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
 
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
     <title>Generator-angular-laravel-app by atefth</title>
   </head>
 
   <body>
+    <a id="forkme_banner" href="https://github.com/atefth/generator-angular-laravel-app">View on GitHub</a>
+    <div class="shell">
 
-    <header>
-      <div class="container">
-        <h1>Generator-angular-laravel-app</h1>
-        <h2>Generator for AngularJs app powered by a Larvel 5 backend</h2>
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Generator-angular-laravel-app</h1>
+            <h2>Generator for AngularJs app powered by a Larvel 5 backend</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
 
-        <section id="downloads">
-          <a href="https://github.com/atefth/generator-angular-laravel-app/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/atefth/generator-angular-laravel-app/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/atefth/generator-angular-laravel-app" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-        </section>
-      </div>
-    </header>
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/atefth/generator-angular-laravel-app/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/atefth/generator-angular-laravel-app/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
 
-    <div class="container">
+
+      <span class="banner-fix"></span>
+
+
       <section id="main_content">
         <h1>
 <a id="generator-angular-laravel-app-" class="anchor" href="#generator-angular-laravel-app-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>generator-angular-laravel-app <a href="https://travis-ci.org/atefth/generator-angular-laravel-app"><img src="https://secure.travis-ci.org/atefth/generator-angular-laravel-app.png?branch=master" alt="Build Status"></a>
@@ -38,6 +56,8 @@
 
 <h2>
 <a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting Started</h2>
+
+<hr>
 
 <h3>
 <a id="what-is-yeoman" class="anchor" href="#what-is-yeoman" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is Yeoman?</h3>
@@ -52,6 +72,8 @@
 
 <div class="highlight highlight-source-shell"><pre>npm install -g yo</pre></div>
 
+<hr>
+
 <h3>
 <a id="yeoman-generators" class="anchor" href="#yeoman-generators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Yeoman Generators</h3>
 
@@ -61,27 +83,50 @@
 
 <div class="highlight highlight-source-shell"><pre>npm install -g generator-angular-laravel-app</pre></div>
 
-<p>Finally, initiate the generator:</p>
+<hr>
+
+<blockquote>
+<p>Angular Laravel App Generator</p>
+</blockquote>
+
+<h3>
+<a id="initiate-the-generator" class="anchor" href="#initiate-the-generator" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initiate the generator:</h3>
 
 <div class="highlight highlight-source-shell"><pre>yo angular-laravel-app</pre></div>
 
-<h2>
-<a id="sub-generators" class="anchor" href="#sub-generators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sub Generators</h2>
+<hr>
+
+<blockquote>
+<p>Angular Laravel App Sub Generators</p>
+</blockquote>
 
 <h3>
 <a id="generate-an-angular-controller" class="anchor" href="#generate-an-angular-controller" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Generate an angular controller:</h3>
 
 <div class="highlight highlight-source-shell"><pre>yo angular-laravel-app:controller</pre></div>
 
+<hr>
+
 <h3>
 <a id="generate-an-angular-factory" class="anchor" href="#generate-an-angular-factory" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Generate an angular factory:</h3>
 
 <div class="highlight highlight-source-shell"><pre>yo angular-laravel-app:factory</pre></div>
 
+<hr>
+
 <h3>
 <a id="generate-an-angular-service" class="anchor" href="#generate-an-angular-service" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Generate an angular service:</h3>
 
 <div class="highlight highlight-source-shell"><pre>yo angular-laravel-app:service</pre></div>
+
+<hr>
+
+<h3>
+<a id="generate-an-angular-directive" class="anchor" href="#generate-an-angular-directive" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Generate an angular directive:</h3>
+
+<div class="highlight highlight-source-shell"><pre>yo angular-laravel-app:directive</pre></div>
+
+<hr>
 
 <h2>
 <a id="getting-to-know-yeoman" class="anchor" href="#getting-to-know-yeoman" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting To Know Yeoman</h2>
@@ -90,11 +135,26 @@
 
 <p>If you'd like to get to know Yeoman better and meet some of his friends, <a href="http://gruntjs.com">Grunt</a> and <a href="http://bower.io">Bower</a>, check out the complete <a href="https://github.com/yeoman/yeoman/wiki/Getting-Started">Getting Started Guide</a>.</p>
 
+<hr>
+
 <h2>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
 
 <p>MIT</p>
       </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/atefth">atefth</a> can be found on <a href="https://github.com/atefth/generator-angular-laravel-app">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
     </div>
 
     
